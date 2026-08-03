@@ -8,8 +8,8 @@ A thorough, step-by-step journey learning Rust from absolute ground zero before 
 
 | Section | Topic | Key Concepts | Status |
 | :--- | :--- | :--- | :---: |
-| **Foundations 1** | **Chapter 3: Control Flow & Types** | Shadowing, Tuples, `if` expressions, `for` loops | 🔄 *In Progress* |
-| **Foundations 2** | **Chapter 4: Ownership & Borrowing** | Move semantics, Borrowing (`&` vs `&mut`), References, Slices | ⏳ *Pending* |
+| **Foundations 1** | **Chapter 3: Control Flow & Types** | Shadowing, Tuples, `if` expressions, `for` loops | ✅ *Completed* |
+| **Foundations 2** | **Chapter 4: Ownership & Borrowing** | Move semantics, Borrowing (`&` vs `&mut`), References, Slices | 🔄 *In Progress* |
 | **Foundations 3** | **Chapter 5: Structs & Methods** | `struct`, `impl`, `self`, `&self`, `&mut self`, Associated functions | ⏳ *Pending* |
 | **Foundations 4** | **Chapter 6: Enums & Pattern Matching** | `enum`, `Option<T>`, `match`, `if let` | ⏳ *Pending* |
 

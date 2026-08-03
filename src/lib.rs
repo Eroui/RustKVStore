@@ -2,6 +2,7 @@
 //! (Covering Chapter 3 of The Rust Book)
 
 /// 1. Variable Shadowing
+///
 /// In Rust, you can re-declare a variable using `let` with the same name.
 /// This is called "shadowing". It lets you transform a value (and even change its type)
 /// without needing `mut`.
@@ -16,18 +17,18 @@
 /// 1. Take the input string `spaces`.
 /// 2. Shadow `spaces` to store its character/byte length using `spaces.len()`.
 /// 3. Return `spaces as i32`.
+///
 pub fn measure_spaces(spaces: &str) -> i32 {
-    todo!("Shadow spaces to measure its length as i32")
+    let spaces = spaces.len();
+    spaces as i32
 }
 
 /// 2. Tuples & Destructuring & 'if' Expressions
+///
 /// A tuple groups multiple values of different types: `let pair = (42, "hello");`
 /// In Rust, `if` is an expression that returns a value!
 ///
 /// Example of `if` expression:
-/// ```rust
-/// let status = if number >= 0 { "Positive" } else { "Negative" };
-/// ```
 ///
 /// Task:
 /// Calculate `a + b`.
@@ -35,7 +36,8 @@ pub fn measure_spaces(spaces: &str) -> i32 {
 /// - The first element is the calculated sum (`i32`).
 /// - The second element is a `String` containing `"Positive"` if sum >= 0, or `"Negative"` if sum < 0.
 pub fn analyze_sum(a: i32, b: i32) -> (i32, String) {
-    todo!("Return a tuple with (sum, String classification)")
+    let status = if a + b >= 0 { "Positive" } else { "Negative" };
+    (a + b, status.to_string())
 }
 
 /// 3. Control Flow & Loops
@@ -48,7 +50,11 @@ pub fn analyze_sum(a: i32, b: i32) -> (i32, String) {
 /// 2. Loop over range `1..=n`: `for i in 1..=n { result *= i; }`
 /// 3. Return `result`.
 pub fn factorial(n: u64) -> u64 {
-    todo!("Calculate factorial using a for loop")
+    let mut result: u64 = 1;
+    for i in 1..=n {
+        result *= i
+    }
+    result
 }
 
 #[cfg(test)]
