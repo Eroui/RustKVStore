@@ -1,34 +1,54 @@
-//! Module 1: Rust Basics - Variables, Mutability, and Functions
-//!
-//! Complete these 3 micro-exercises to get comfortable with basic Rust syntax!
+//! Foundations Part 1: Control Flow, Tuples, & Variable Shadowing
+//! (Covering Chapter 3 of The Rust Book)
 
-/// Exercise 1: Return the sum of two integers.
+/// 1. Variable Shadowing
+/// In Rust, you can re-declare a variable using `let` with the same name.
+/// This is called "shadowing". It lets you transform a value (and even change its type)
+/// without needing `mut`.
 ///
-/// Key concept: Function syntax `fn name(param: type) -> ReturnType`
-/// Hint: In Rust, the last expression in a function without a semicolon `;` is returned automatically!
-pub fn add_numbers(a: i32, b: i32) -> i32 {
-    a + b
+/// Example:
+/// ```rust
+/// let spaces = "   ";          // &str
+/// let spaces = spaces.len();   // usize (shadowed!)
+/// ```
+///
+/// Task:
+/// 1. Take the input string `spaces`.
+/// 2. Shadow `spaces` to store its character/byte length using `spaces.len()`.
+/// 3. Return `spaces as i32`.
+pub fn measure_spaces(spaces: &str) -> i32 {
+    todo!("Shadow spaces to measure its length as i32")
 }
 
-/// Exercise 2: Mutate a variable and modify strings.
+/// 2. Tuples & Destructuring & 'if' Expressions
+/// A tuple groups multiple values of different types: `let pair = (42, "hello");`
+/// In Rust, `if` is an expression that returns a value!
 ///
-/// Key concept: Variables are immutable by default (`let x = 5;`).
-/// To change a variable's value, use `let mut x = ...;`.
-pub fn make_greeting(name: &str) -> String {
-    // Hint:
-    // 1. Declare a mutable string: `let mut greeting = String::from("Hello, ");`
-    // 2. Push the name slice onto it: `greeting.push_str(name);`
-    // 3. Return `greeting` (without a trailing semicolon).
-    let mut greeting = String::from("Hello, ");
-    greeting.push_str(name);
-    greeting
+/// Example of `if` expression:
+/// ```rust
+/// let status = if number >= 0 { "Positive" } else { "Negative" };
+/// ```
+///
+/// Task:
+/// Calculate `a + b`.
+/// Return a tuple `(i32, String)` where:
+/// - The first element is the calculated sum (`i32`).
+/// - The second element is a `String` containing `"Positive"` if sum >= 0, or `"Negative"` if sum < 0.
+pub fn analyze_sum(a: i32, b: i32) -> (i32, String) {
+    todo!("Return a tuple with (sum, String classification)")
 }
 
-/// Exercise 3: Create an owned empty String.
+/// 3. Control Flow & Loops
 ///
-/// Key concept: `String::new()` creates a brand-new, empty String on the heap.
-pub fn create_empty_string() -> String {
-    String::new()
+/// Task: Calculate the factorial of `n` (n!) using a `for` loop.
+/// Note: factorial(0) = 1, factorial(5) = 5 * 4 * 3 * 2 * 1 = 120.
+///
+/// Hint:
+/// 1. Declare a mutable variable `let mut result: u64 = 1;`
+/// 2. Loop over range `1..=n`: `for i in 1..=n { result *= i; }`
+/// 3. Return `result`.
+pub fn factorial(n: u64) -> u64 {
+    todo!("Calculate factorial using a for loop")
 }
 
 #[cfg(test)]
@@ -36,21 +56,21 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_add_numbers() {
-        assert_eq!(add_numbers(3, 4), 7);
-        assert_eq!(add_numbers(-1, 1), 0);
+    fn test_measure_spaces() {
+        assert_eq!(measure_spaces("   "), 3);
+        assert_eq!(measure_spaces("hello world"), 11);
     }
 
     #[test]
-    fn test_make_greeting() {
-        assert_eq!(make_greeting("Alice"), "Hello, Alice");
-        assert_eq!(make_greeting("Bob"), "Hello, Bob");
+    fn test_analyze_sum() {
+        assert_eq!(analyze_sum(10, 5), (15, "Positive".to_string()));
+        assert_eq!(analyze_sum(-10, 2), (-8, "Negative".to_string()));
     }
 
     #[test]
-    fn test_create_empty_string() {
-        let s = create_empty_string();
-        assert!(s.is_empty());
-        assert_eq!(s.len(), 0);
+    fn test_factorial() {
+        assert_eq!(factorial(0), 1);
+        assert_eq!(factorial(1), 1);
+        assert_eq!(factorial(5), 120);
     }
 }

@@ -1,43 +1,35 @@
-# 🦀 Rust Redis-like Key-Value Store (`rustKVStore`)
+# 🦀 Rust Foundations & Redis KV Store (`rustKVStore`)
 
-A step-by-step journey learning Rust from absolute ground zero by building a Redis-like Key-Value store.
+A thorough, step-by-step journey learning Rust from absolute ground zero before building a Redis-like Key-Value store.
 
 ---
 
-## 📌 Learning Journey & Module Roadmap
+## 📚 Rust Book Foundations Curriculum
 
-| Module | Topic | Concepts | Status |
+| Section | Topic | Key Concepts | Status |
 | :--- | :--- | :--- | :---: |
-| **Module 0** | **Absolute Basics** | Variables (`let` vs `let mut`), Functions, Return Expressions, Strings | ✅ *Completed* |
-| **Module 1** | **Structs & HashMap (In-Memory KV Store)** | `struct`, `impl`, `HashMap`, Ownership, `Option<T>` | 🔄 *In Progress* |
-| **Module 2** | **Key Expiration & TTL** | `Instant`, Timestamps, Enums, Pattern Matching | ⏳ *Pending* |
-| **Module 3** | **Extended Data Structures** | `VecDeque` (Lists), `HashSet` (Sets) | ⏳ *Pending* |
-| **Module 4** | **Persistence (AOF & Files)** | File I/O (`std::fs`), Buffer Writers (`BufWriter`), `Result<T, E>` | ⏳ *Pending* |
-| **Module 5** | **Networking & RESP Protocol** | `tokio`, Async/Await, Parsing Byte Streams | ⏳ *Pending* |
-| **Module 6** | **Concurrency & Thread Safety** | `Arc<Mutex<T>>`, Shared State, Concurrent Clients | ⏳ *Pending* |
+| **Foundations 1** | **Chapter 3: Control Flow & Types** | Shadowing, Tuples, `if` expressions, `for` loops | 🔄 *In Progress* |
+| **Foundations 2** | **Chapter 4: Ownership & Borrowing** | Move semantics, Borrowing (`&` vs `&mut`), References, Slices | ⏳ *Pending* |
+| **Foundations 3** | **Chapter 5: Structs & Methods** | `struct`, `impl`, `self`, `&self`, `&mut self`, Associated functions | ⏳ *Pending* |
+| **Foundations 4** | **Chapter 6: Enums & Pattern Matching** | `enum`, `Option<T>`, `match`, `if let` | ⏳ *Pending* |
 
 ---
 
-## 🛠️ LunarVim Navigation Cheatsheet
+## 🗺️ Key-Value Store Project Roadmap (Post-Foundations)
 
-### Window Splits
-- `:vs` or `:vsplit <filename>` – Open vertical split.
-- `:sp` or `:split <filename>` – Open horizontal split.
-- `Ctrl + h` – Move cursor to left window.
-- `Ctrl + l` – Move cursor to right window.
-- `Ctrl + j` – Move cursor to window below.
-- `Ctrl + k` – Move cursor to window above.
-
-### Cargo Commands in Vertical Split
-- `Space + r + t` – Run `cargo test` in vertical split terminal.
-- `Space + r + r` – Run `cargo run` in vertical split terminal.
-- `Space + r + c` – Run `cargo check` in vertical split terminal.
+| Module | Topic | Description | Status |
+| :--- | :--- | :--- | :---: |
+| **KV Module 1** | **In-Memory KV Store** | HashMap-backed storage with `set`, `get`, `remove` | ⏳ *Pending* |
+| **KV Module 2** | **Key Expiration & TTL** | Timestamps, lazy & active key deletion | ⏳ *Pending* |
+| **KV Module 3** | **Extended Data Types** | Lists (`VecDeque`), Sets (`HashSet`) | ⏳ *Pending* |
+| **KV Module 4** | **Persistence** | Append-Only File (AOF) logging & snapshotting | ⏳ *Pending* |
+| **KV Module 5** | **RESP Protocol Server** | Custom Redis Serialization Protocol & Async TCP server | ⏳ *Pending* |
+| **KV Module 6** | **Concurrency** | Shared state across threads with `Arc<Mutex<T>>` | ⏳ *Pending* |
 
 ---
 
-## 📚 Recommended Reading
-- [The Rust Programming Language Book](https://doc.rust-lang.org/book/)
-  - **Chapter 3**: Variables, Mutability, and Basic Functions
-  - **Chapter 4**: Understanding Ownership
-  - **Chapter 5**: Using Structs to Structure Related Data
-  - **Chapter 8.1 & 8.3**: Vectors & HashMaps
+## 🛠️ LunarVim Shortcuts & Tooling
+
+- `Space + r + t`: Run `cargo test` in a vertical split terminal
+- `Ctrl + h` / `Ctrl + l`: Switch between code and terminal split
+- `Space + c`: Close current tab / window
